@@ -3,4 +3,5 @@ A python script that takes a list of inputed urls and then checks it they are av
 
 Run in your command line:
 >python tumblr_scape.py
+
 Make sure you have requests installed!
