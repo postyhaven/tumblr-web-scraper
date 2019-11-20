@@ -17,7 +17,7 @@ for t in url_things:
     if r.status_code == 200:
         print(f'{t} exists')
     elif r.status_code == 404:
-        print(f'{t} is may be vacant!')
+        print(f'{t} may be vacant!')
         available.append(t)
     else:
         print(f'{t}: Status Code {r.status_code}')
