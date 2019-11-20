@@ -5,11 +5,7 @@ import requests
 
 url_input = input("Enter urls here, separate by using ',': ")
 url_things = []
-url_things.append(url_input)
-
-#if you want to look at number-only urls (ex. 384), use a loop
-#for x in range(100,999):
-#	url_things.append(x)
+url_things = url_input.split(", ")
 
 # name of the text file with the stored extensions
 filename = 'available_extensions.txt'
@@ -19,9 +15,9 @@ available = []
 for t in url_things:
     r = requests.get(f'http://{t}.tumblr.com')
     if r.status_code == 200:
-        print(f'{t} Exists')
+        print(f'{t} exists')
     elif r.status_code == 404:
-        print(f'{t} Is Vacant!')
+        print(f'{t} is may be vacant!')
         available.append(t)
     else:
         print(f'{t}: Status Code {r.status_code}')
